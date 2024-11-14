@@ -1,0 +1,7 @@
+const express = require('express');
+const app = express();
+
+app.get('/', function (req, res) {
+  res.send("goodgood");
+});
+app.listen(8080);
