@@ -1,16 +1,15 @@
 {
-  "name": "node",
+  "name": "homework1",
   "version": "1.0.0",
-  "description": "1일차 [**Readline_CRUD**]",
-  "main": "Readline_CRUD/index.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node Readline_CRUD/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.21.1"
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.9.0"
   }
 }
