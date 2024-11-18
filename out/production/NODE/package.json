@@ -1,10 +1,9 @@
 {
   "name": "homework1",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,10 +11,5 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^22.9.0"
-  },
-  "dependencies": {
-    "@mikro-orm/core": "^6.4.0",
-    "@mikro-orm/postgresql": "^6.4.0",
-    "@mikro-orm/reflection": "^6.4.0"
   }
 }
