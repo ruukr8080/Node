@@ -1,17 +1,18 @@
-import {Entity, PrimaryKey, Property} from '@mikro-orm/core';
+import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import {UserRepository} from "../UserRepository.js";
 
-@Entity()
+@Entity({repository: () => UserRepository})
 export class User {
-    @PrimaryKey()
+    @PrimaryKey({ type: 'number', autoincrement: true })
     id!: number;
 
-    @Property()
+    @Property({ type: 'string' })
     name!: string;
 
-    @Property()
+    @Property({ type: 'number' })
     age!: number;
 
-    @Property()
+    @Property({ type: 'string' })
     gender!: string;
 
     constructor(name: string, age: number, gender: string) {

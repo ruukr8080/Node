@@ -1,18 +1,25 @@
-import { EntityManager } from '@mikro-orm/postgresql';
-// @ts-ignore
-import { User } from './entities/User.ts';
+import type {User} from './entities/User.js';
+import {EntityManager, EntityRepository, Transactional} from "@mikro-orm/core";
 
-// @ts-ignore
-export class UserRepository extends EntityManager<User> {
-    async save(user : User) {
-        await this.persist(user).flush();
-        return user.id;
+
+export class UserRepository extends EntityRepository<User>  {
+
+    constructor(readonly em: EntityManager) {
+        super(em, 'User')
     }
 
+    @Transactional()
+    async save(user: User) {
+        this.em.persist(user);
+    }
 
-    async findUser(id: number) {
-        // @ts-ignore
-        return this.findOne({id});
+    async findByAges(minAge: number, maxAge: number): Promise<User[]> {
+        return this.find({
+            age: {$gte: minAge, $lte: maxAge}});
+    }
+
+    async findByGenders(gender: string): Promise<User[]> {
+        return this.find({gender: {$like: gender}});
     }
 }
 

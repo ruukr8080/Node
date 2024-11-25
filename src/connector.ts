@@ -1,7 +1,6 @@
 import { MikroORM } from '@mikro-orm/core';
 import config from './mikro-orm.config.js';
 
-
 async function connectDB() {
     try {
         const orm = await MikroORM.init(config);
@@ -12,5 +11,4 @@ async function connectDB() {
         throw error;
     }
 }
-
-connectDB();
+// connectDB();
