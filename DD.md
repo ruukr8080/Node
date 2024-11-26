@@ -105,17 +105,55 @@
 >```
 
 
+---
+
+
+
+1. 포스트그레 인메모리
+2. 도커 재설치하고 호스트에서 되는지 확인
+3. 임포트 최적화 설정해라.( 자동으로 안쓰는거 사라짐.)
+4. core는 드라이버  없어서 실제로 작동하려면 드라이버 패키지까지 설치필요한데 왜 그렇게 만들었는지 알아오기
+5. 'boolean 함수 만드는법' , 'boolean 변수명 짓기' , 'boolean 함수명 짓기' , 'boolean 함수 만드는법'
+6. 입력 검증 역할은 userService 가 아님.
+7. promise , async , 
+8. early return 패턴
+
+---
+
+- 터미널에서 ubuntu 말고 wsl로 들어가셈
+- js로 빌드하고 실행해라. - tsx X 
+- nodemon으로 --watch tsc && node dist/index.js를 세팅해라. (**증분 컴파일** (incremental compile)) ts 증분빌드 활성화되면
+  dist폴더에 tsconfig.buildinfo 이런 파일이 있을거임
 
 
 
 
 
+---
+- 프로젝트 디폴트 패키지
+  - corepack@0.29.3
+  - npm@10.8.2
+
+- mikro-orm 설정
+  - debug: ['query', 'query-params'] 
+  - 콘솔에 쿼리 나온거 그대로 복붙해서 쿼리콘솔에서 사용 가능. [verbose: true] 젤 자세함.
+  - `const config: Options{}`  -> `export default defineConfig()`
+  - `@mikro-orm/core` 말고 `@mikro-orm/postgresql`로. 패키지에 동일한 함수 가져오면 driver 생략 가능.
+  - `orm refresh` === `flyway` 디비 자동생성
+
+- orm refresh
+
+
+---
+`$ docker compose up`
 
 
 
-
-
-
+---
+- 변수 선언이랑 함수 실행 구분은 빈 줄로.
+- 입력받는 함수는 검증도 같이해도 됨.
+- 함수 분리시엔 실행 순서를 기준으로 
+- 함수에 코드 10줄 안넘어가게 만드셈
 
 
 

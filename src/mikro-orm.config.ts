@@ -1,17 +1,13 @@
-import { Options } from '@mikro-orm/core';
-import { PostgreSqlDriver } from '@mikro-orm/postgresql';
+import {defineConfig, Options} from '@mikro-orm/postgresql';
 
-const config: Options = {
-    driver: PostgreSqlDriver,
+export default defineConfig({
     dbName: 'postgres',
     host: 'localhost',
     port: 5432,
     user: 'postgres',
     password: 'sa',
-    // entities: ['dist/entities'],
-    entities: ['src/entities/*.ts'],
+    entities: ['dist/entities'],
+    entitiesTs: ['src/entities/*.ts'],
     allowGlobalContext: true,
-    // debug : true,
-};
-
-export default config;
+    // debug: ['query', 'query-params']
+});

@@ -6,18 +6,6 @@ export class UserService {
     constructor(private readonly userRepository: UserRepository) {
     }
 
-    async featureValidation(input: number): Promise<boolean> {
-        if (isNaN(input)) {
-            console.error("NaN");
-            return false;
-        }
-        if (input !== 1 && input !== 2) {
-            console.error("Only 1, 2");
-            return false;
-        }
-        return true;
-    }
-
     async registerValidation(name: string, age : number, gender: string): Promise<boolean> {
         if (isNaN(age)) {
             console.error("NaN");
