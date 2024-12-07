@@ -4,7 +4,7 @@
   "description": "1일차 [**Readline_CRUD**]",
   "main": "Readline_CRUD/index.js",
   "scripts": {
-    "start": "node Readline_CRUD/index.js",
+    "dev": "node Readline_CRUD/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
